@@ -35,26 +35,25 @@ Lors de la phase de prétraitement des données pour l'entraînement du modèle,
 Les features, bien que représentés comme des entiers en entrée dans l'API, ont subi une normalisation pendant la phase de nettoyage des données.
 
 # Sauvegarde du Modèle :
-Les modèles ont été sauvegardés au format Joblib pour faciliter le déploiement, et notre choix de créer le route utilisant le modèle de la plus haute précision(SVC). 
+Les modèles ont été sauvegardés au format Joblib pour faciliter le déploiement, et notre choix de créer la route utilisant le modèle de la plus haute précision(SVC). 
 
 # Développement de l'API avec FastAPI :
 . On a utilisé FastAPI pour créer une API qui prend en entrée des caractéristiques sous forme d'entiers.
 . La première version de l'API affiche toutes les fonctionnalités, ce qui inclut celles normalisées lors de la phase de prétraitement des données.
 
 # Prédiction de l'Éligibilité au Crédit :
-. L'API permet d'exécuter des prédictions pour déterminer si une personne peut obtenir un crédit ou non, basé sur les caractéristiques fournies.
+. L'API joue un rôle crucial dans la prédiction de l'éligibilité au crédit. L'utilisation d'APIs pour l'évaluation des risques et la prise de décision automatisée peut grandement améliorer l'efficacité du processus en se basant sur les caractéristiques fournies.
 
 # Stockage des Résultats :
-.Les résultats des prédictions (combien de personnes obtiennent ou ne peuvent pas obtenir un crédit) sont stockés pour analyse ultérieure.
+.Les résultats des prédictions (combien de personnes peuvent ou ne peuvent pas obtenir un crédit) sont stockés pour analyse ultérieure.
 
 # Dockerization de l'Application :
-. On a installé Docker pour faciliter le déploiement de l'application.
+. On a utilisé Docker pour faciliter le déploiement de l'application en encapsulant toutes les dépendances d'une application dans un conteneur. Cela garantit que l'application fonctionnera de manière cohérente, indépendamment de l'environnement sous-jacent. 
 . Des images Docker ont été créées pour l'application API principale, permettant une mise en production plus facile.
 
 # Configuration de Prometheus et Grafana :
-. Prometheus a été configuré pour collecter des métriques à partir de l'application déployée.
-. Grafana a été mis en place pour visualiser les statistiques, offrant une surveillance en temps réel de la performance du modèle.
-
+. Prometheus a été configuré pour collecter des métriques à partir de l'application déployée et les stocker sous forme de séries temporelles. Cela permet de suivre l'évolution des performances au fil du temps. 
+. Grafana a été mis en place pour visualiser les métriques liées aux performances de notre application, offrant une surveillance en temps réel de la performance du modèle en créant des tableaux de bord personnalisés et affichant des graphiques en temps réel .
 # Affichage des Statistiques :
-. Les statistiques, telles que le nombre de personnes obtenant ou se faisant refuser un crédit, sont visualisées à l'aide de Grafana.
-. Ceci sert comme moyen de vérifier le bon fonctionnement du modèle en production.
+. Les statistiques, telles que le nombre de personnes obtenant un crédit ou non, sont visualisées à l'aide de Grafana.
+. Celui-ci sert comme un moyen pour vérifier le bon fonctionnement du modèle en production.
