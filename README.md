@@ -49,11 +49,14 @@ Les modèles ont été sauvegardés au format Joblib pour faciliter le déploiem
 
 # Dockerization de l'Application :
 . On a utilisé Docker pour faciliter le déploiement de l'application en encapsulant toutes les dépendances d'une application dans un conteneur. Cela garantit que l'application fonctionnera de manière cohérente, indépendamment de l'environnement sous-jacent. 
+
 . Des images Docker ont été créées pour l'application API principale, permettant une mise en production plus facile.
 
 # Configuration de Prometheus et Grafana :
 . Prometheus a été configuré pour collecter des métriques à partir de l'application déployée et les stocker sous forme de séries temporelles. Cela permet de suivre l'évolution des performances au fil du temps. 
+
 . Grafana a été mis en place pour visualiser les métriques liées aux performances de notre application, offrant une surveillance en temps réel de la performance du modèle en créant des tableaux de bord personnalisés et affichant des graphiques en temps réel .
 # Affichage des Statistiques :
 . Les statistiques, telles que le nombre de personnes obtenant un crédit ou non, sont visualisées à l'aide de Grafana.
+
 . Celui-ci sert comme un moyen pour vérifier le bon fonctionnement du modèle en production.
