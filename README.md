@@ -35,7 +35,7 @@ Lors de la phase de prétraitement des données pour l'entraînement du modèle,
 Les features, bien que représentés comme des entiers en entrée dans l'API, ont subi une normalisation pendant la phase de nettoyage des données.
 
 # Sauvegarde du Modèle :
-Le modèle choisi (SVC) a été sauvegardé au format Joblib pour faciliter le déploiement.
+Les modèles ont été sauvegardés au format Joblib pour faciliter le déploiement, et notre choix de créer le route utilisant le modèle de la plus haute précision(SVC). 
 
 # Développement de l'API avec FastAPI :
 . On a utilisé FastAPI pour créer une API qui prend en entrée des caractéristiques sous forme d'entiers.
